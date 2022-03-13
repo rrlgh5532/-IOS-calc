@@ -2,7 +2,8 @@
 //  ViewController.swift
 //  calc
 //
-//  Created by 이기호 on 2022/03/11.
+//  Created by One27 on 2022/03/11.
+//  rrlgh5532@me.com
 //
 
 import UIKit
