@@ -29,6 +29,13 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var lab_value: UILabel!
 
+    @IBAction func btn_div(_ sender: UIButton) {
+        target = Int(targetString) ?? 0
+        targetString = ""
+        lab_value.text = targetString
+        calcQ += "/"
+
+    }
     @IBAction func btn_multi(_ sender: UIButton) {
         target = Int(targetString) ?? 0
         targetString = ""
@@ -56,6 +63,9 @@ class ViewController: UIViewController {
             lab_value.text = "="+String(temp)
         }else if(calcQ == "*"){
             temp = target * (Int(targetString) ?? 0)
+            lab_value.text = "="+String(temp)
+        }else if(calcQ == "/"){
+            temp = target / (Int(targetString) ?? 0)
             lab_value.text = "="+String(temp)
         }
     }
