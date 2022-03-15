@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     var target = 0
     var temp = 0
+    var temp2 = 0.0
     var index = 0
     var targetString = ""
     var calcQ = ""
@@ -66,7 +67,7 @@ class ViewController: UIViewController {
             temp = target * (Int(targetString) ?? 0)
             lab_value.text = "="+String(temp)
         }else if(calcQ == "/"){
-            temp = target / (Int(targetString) ?? 0)
+            var temp:Double = Double(target) / (Double(targetString) ?? 0)
             lab_value.text = "="+String(temp)
         }
     }
