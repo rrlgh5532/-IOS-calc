@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     @IBOutlet var lab_History: UILabel!
     
     func saveHistory(){
-        // make the ui is first test
+        // make the ui is first test2
     }
     
     @IBAction func btn_div(_ sender: UIButton) {
