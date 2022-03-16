@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var index = 0
     var targetString = ""
     var calcQ = ""
+    var calcHistory = ""
     
     func calcNum(tempA:Int){
         targetString += String(tempA)
@@ -29,8 +30,13 @@ class ViewController: UIViewController {
         targetString = ""
         // Do any additional setup after loading the view.
     }
-    @IBOutlet weak var lab_value: UILabel!
-
+    @IBOutlet var lab_value: UILabel!
+    @IBOutlet var lab_History: UILabel!
+    
+    func saveHistory(){
+        
+    }
+    
     @IBAction func btn_div(_ sender: UIButton) {
         target = Int(targetString) ?? 0
         targetString = ""
