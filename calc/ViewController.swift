@@ -73,8 +73,8 @@ class ViewController: UIViewController {
             temp = target * (Int(targetString) ?? 0)
             lab_value.text = "="+String(temp)
         }else if(calcQ == "/"){
-            var temp = Double(target) / (Double(targetString) ?? 0)
-            lab_value.text = "="+String(temp)
+            let temp2 = Double(target) / (Double(targetString) ?? 0)
+            lab_value.text = "="+String(temp2)
         }
     }
     @IBAction func btn_ac(_ sender: Any) {
