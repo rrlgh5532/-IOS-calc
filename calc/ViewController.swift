@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var targetString = ""
     var calcQ = ""
     var calcHistory = ""
+    var triger = 0
     
     func calcNum(tempA:Int){
         targetString += String(tempA)
@@ -31,10 +32,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBOutlet var lab_value: UILabel!
-    @IBOutlet var lab_History: UILabel!
+    @IBOutlet var lab_history0: UILabel!
+    @IBOutlet var lab_history1: UILabel!
+    @IBOutlet var lab_history2: UILabel!
+    @IBOutlet var lab_history3: UILabel!
+    @IBOutlet var lab_history4: UILabel!
+    @IBOutlet var lab_history5: UILabel!
+    @IBOutlet var lab_history6: UILabel!
+    @IBOutlet var lab_history7: UILabel!
+    @IBOutlet var lab_history8: UILabel!
     
-    func saveHistory(){
-        // make the ui is first
+    func saveHistory(history:String){
+        lab_history8.text = lab_history7.text
+        lab_history7.text = lab_history6.text
+        lab_history6.text = lab_history5.text
+        lab_history5.text = lab_history4.text
+        lab_history4.text = lab_history3.text
+        lab_history3.text = lab_history2.text
+        lab_history2.text = lab_history1.text
+        lab_history1.text = lab_history0.text
+        lab_history0.text = history
     }
     
     @IBAction func btn_div(_ sender: UIButton) {
@@ -63,56 +80,103 @@ class ViewController: UIViewController {
         calcQ += "+"
     }
     @IBAction func btn_showresult(_ sender: Any) {
+        triger=1
         if(calcQ=="+"){
             temp = (Int(targetString) ?? 0) + target
-            lab_value.text = "="+String(temp)
+            lab_value.text = " = "+String(temp)
         }else if(calcQ == "-"){
             temp = target - (Int(targetString) ?? 0)
-            lab_value.text = "="+String(temp)
+            lab_value.text = " = "+String(temp)
         }else if(calcQ == "*"){
             temp = target * (Int(targetString) ?? 0)
-            lab_value.text = "="+String(temp)
+            lab_value.text = " = "+String(temp)
         }else if(calcQ == "/"){
             let temp2 = Double(target) / (Double(targetString) ?? 0)
-            lab_value.text = "="+String(temp2)
+            lab_value.text = " = "+String(temp2)
         }
+        var save:String = String(target)+" "
+        save += calcQ+" "
+        save += targetString+lab_value.text!
+        saveHistory(history: save)
     }
     @IBAction func btn_ac(_ sender: Any) {
         targetString = ""
         target = 0
         temp = 0
+        temp2 = 0.0
         calcQ = ""
         lab_value.text = "clear"
+        triger = 0
+    }
+    
+    func inits(){
+        targetString = ""
+        target = 0
+        temp = 0
+        temp2 = 0.0
+        calcQ = ""
+        lab_value.text = "clear"
+        triger = 0
     }
     
     @IBAction func btn_1(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:1)
     }
     @IBAction func btn_2(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:2)
     }
     @IBAction func btn_3(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:3)
     }
     @IBAction func btn_4(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:4)
     }
     @IBAction func btn_5(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:5)
     }
     @IBAction func btn_6(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:6)
     }
     @IBAction func btn_7(_ sender: UIButton) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:7)
     }
     @IBAction func btn_8(_ sender: Any) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:8)
     }
     @IBAction func btn_9(_ sender: Any) {
+        if(triger==1){
+            inits()
+        }
         calcNum(tempA:9)
     }
     @IBAction func btn_0(_ sender: Any) {
+        if(triger==1){
+            inits()
+        }
         if(targetString.count<1){
             lab_value.text = "0"
         }
