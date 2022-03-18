@@ -130,7 +130,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:1)
     }
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:2)
     }
@@ -150,7 +150,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:3)
     }
@@ -160,7 +160,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:4)
     }
@@ -170,7 +170,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:5)
     }
@@ -180,7 +180,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:6)
     }
@@ -190,7 +190,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:7)
     }
@@ -200,7 +200,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:8)
     }
@@ -210,7 +210,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         calcNum(tempA:9)
     }
@@ -220,7 +220,7 @@ class ViewController: UIViewController {
         }else if(triger == 2){
             targetString = ""
             lab_value.text = targetString
-            triger = 1
+            //triger = 1
         }
         
         if(targetString.count<1){
