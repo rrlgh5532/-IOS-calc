@@ -131,7 +131,10 @@
                                 <rect key="frame" x="199" y="737" width="85" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="."/>
+                                <connections>
+                                    <action selector="btn_Dot:" destination="BYZ-38-t0r" eventType="touchDown" id="Efe-d0-FpU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBa-xg-0Ie">
                                 <rect key="frame" x="293" y="737" width="85" height="39"/>

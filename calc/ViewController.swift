@@ -11,8 +11,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var target = 0
-    var temp = 0
+    var target = 0.0
+    var temp = 0.0
     var temp2 = 0.0
     var index = 0
     var targetString = ""
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 
     @IBAction func btn_div(_ sender: UIButton) {
         triger = 2
-        target = Int(targetString) ?? 0
+        target = Double(targetString) ?? 0
         targetString = "/"
         lab_value.text = targetString
         calcQ += "/"
@@ -65,21 +65,21 @@ class ViewController: UIViewController {
     }
     @IBAction func btn_multi(_ sender: UIButton) {
         triger = 2
-        target = Int(targetString) ?? 0
+        target = Double(targetString) ?? 0
         targetString = "-"
         lab_value.text = targetString
         calcQ += "*"
     }
     @IBAction func btn_sub(_ sender: UIButton) {
         triger = 2
-        target = Int(targetString) ?? 0
+        target = Double(targetString) ?? 0
         targetString = "-"
         lab_value.text = targetString
         calcQ += "-"
     }
     @IBAction func btn_add(_ sender: UIButton) {
         triger = 2
-        target = Int(targetString) ?? 0
+        target = Double(targetString) ?? 0
         targetString = "+"
         lab_value.text = targetString
         calcQ += "+"
@@ -87,13 +87,13 @@ class ViewController: UIViewController {
     @IBAction func btn_showresult(_ sender: Any) {
         triger=1
         if(calcQ=="+"){
-            temp = (Int(targetString) ?? 0) + target
+            temp = (Double(targetString) ?? 0) + target
             lab_value.text = " = "+String(temp)
         }else if(calcQ == "-"){
-            temp = target - (Int(targetString) ?? 0)
+            temp = target - (Double(targetString) ?? 0)
             lab_value.text = " = "+String(temp)
         }else if(calcQ == "*"){
-            temp = target * (Int(targetString) ?? 0)
+            temp = target * (Double(targetString) ?? 0)
             lab_value.text = " = "+String(temp)
         }else if(calcQ == "/"){
             let temp2 = Double(target) / (Double(targetString) ?? 0)
@@ -122,6 +122,9 @@ class ViewController: UIViewController {
         calcQ = ""
         lab_value.text = "clear"
         triger = 0
+    }
+    @IBAction func btn_Dot(_ sender: Any) {
+        
     }
     
     @IBAction func btn_1(_ sender: UIButton) {
