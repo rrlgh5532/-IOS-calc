@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var targetString = ""
     var calcQ = ""
     var triger = 0
+    var operationcount = 0
     
     @IBOutlet var lab_value: UILabel!
     @IBOutlet var lab_history0: UILabel!
@@ -53,35 +54,55 @@ class ViewController: UIViewController {
         lab_history0.text = history
     }
 
-    @IBAction func btn_div(_ sender: UIButton) {
+    func operations(optype:Int){
+        
         triger = 2
         target = Double(targetString) ?? 0
-        targetString = "/"
+        
+        switch optype{
+        case 0:
+            targetString = "+"
+            calcQ = "+"
+        case 1:
+            targetString = "-"
+            calcQ = "-"
+        case 2:
+            targetString = "*"
+            calcQ = "*"
+        case 3:
+            targetString = "/"
+            calcQ = "/"
+        default:
+            break
+        }
         lab_value.text = targetString
-        calcQ += "/"
-
+    }
+    
+    @IBAction func btn_div(_ sender: UIButton) {
+        if(operationcount==0){
+            operations(optype: 3)
+            operationcount=1
+        }
     }
     @IBAction func btn_multi(_ sender: UIButton) {
-        triger = 2
-        target = Double(targetString) ?? 0
-        targetString = "-"
-        lab_value.text = targetString
-        calcQ += "*"
+        if(operationcount==0){
+            operations(optype: 2)
+            operationcount=1
+        }
     }
     @IBAction func btn_sub(_ sender: UIButton) {
-        triger = 2
-        target = Double(targetString) ?? 0
-        targetString = "-"
-        lab_value.text = targetString
-        calcQ += "-"
+        if(operationcount==0){
+            operations(optype: 1)
+            operationcount=1
+        }
     }
     @IBAction func btn_add(_ sender: UIButton) {
-        triger = 2
-        target = Double(targetString) ?? 0
-        targetString = "+"
-        lab_value.text = targetString
-        calcQ += "+"
+        if(operationcount==0){
+            operations(optype: 0)
+            operationcount=1
+        }
     }
+    
     @IBAction func btn_showresult(_ sender: Any) {
         if(triger==0){
             if(calcQ=="+"){
@@ -102,10 +123,12 @@ class ViewController: UIViewController {
             save += targetString+lab_value.text!
             saveHistory(history: save)
             triger=3
+            operationcount=0
         }
     }
     @IBAction func btn_ac(_ sender: Any) {
         inits()
+        operationcount=0
     }
     
     func inits(){
