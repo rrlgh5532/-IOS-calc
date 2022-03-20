@@ -101,6 +101,7 @@ class ViewController: UIViewController {
             save += calcQ+" "
             save += targetString+lab_value.text!
             saveHistory(history: save)
+            triger=3
         }
     }
     @IBAction func btn_ac(_ sender: Any) {
@@ -132,7 +133,7 @@ class ViewController: UIViewController {
     func checkTriger(){
         if(triger==1){
             inits()
-        }else if(triger == 2){
+        }else if(triger == 2||triger==3){
             targetString = ""
             lab_value.text = targetString
             triger = 0
