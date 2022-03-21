@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        target = 0
+        target = 0.0
         targetString = ""
         // Do any additional setup after loading the view.
     }
